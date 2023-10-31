@@ -33,9 +33,10 @@ const flash = require('connect-flash')
     //body-parser:
         app.use(
             bodyParser.urlencoded({
-                extended: false,
+                extended: true,
             })
-        );
+        )
+        app.use(bodyParser.json())
     //mongoose:
     mongoose.Promise = global.Promise;
         mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
